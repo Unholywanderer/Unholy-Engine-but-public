@@ -1,0 +1,21 @@
+{
+	"songs": [
+		["Silly Spookeez", "spooky", [34, 51, 68]],
+		["Silly South",    "spooky", [34, 51, 68]],
+		["Silly Monster", "monster", [34, 51, 68]],
+		["Silly Billy",        "bf", [34, 51, 68]]
+	],
+
+	"weekCharacters": [
+		"spooky", "bf", "gf"
+	],
+
+	"difficulties": ["hard"],
+	"storyName": "Spooky Month",
+	"weekBefore": "week1",
+	"weekName": "Week 2",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

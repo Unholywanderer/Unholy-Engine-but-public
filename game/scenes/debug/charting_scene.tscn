@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://deksi37bicvb3"]
+
+[ext_resource type="Script" path="res://game/scenes/debug/Charting_Scene.gd" id="1_li1ut"]
+[ext_resource type="Texture2D" uid="uid://dgbcc7lfrqbk1" path="res://assets/images/menuDark.png" id="2_g7jes"]
+[ext_resource type="PackedScene" uid="uid://cj2ryjlbhxh8b" path="res://game/objects/ui/strum_line.tscn" id="3_0lda8"]
+[ext_resource type="Script" path="res://game/objects/ui/Icon.gd" id="3_xnvtn"]
+
+[node name="Charting_Scene" type="Node2D"]
+script = ExtResource("1_li1ut")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(639, 362)
+texture = ExtResource("2_g7jes")
+
+[node name="NoteGrid" type="GridContainer" parent="."]
+visible = false
+offset_left = 90.0
+offset_top = 208.0
+offset_right = 732.0
+offset_bottom = 693.0
+columns = 9
+
+[node name="NoteGroup" type="CanvasGroup" parent="."]
+
+[node name="OppIcon" type="Sprite2D" parent="NoteGroup"]
+position = Vector2(70, 80)
+script = ExtResource("3_xnvtn")
+
+[node name="PlayIcon" type="Sprite2D" parent="NoteGroup"]
+position = Vector2(750, 80)
+script = ExtResource("3_xnvtn")
+
+[node name="Opponent" parent="NoteGroup" instance=ExtResource("3_0lda8")]
+position = Vector2(100, 100)
+scale = Vector2(0.7, 0.7)
+
+[node name="Player" parent="NoteGroup" instance=ExtResource("3_0lda8")]
+position = Vector2(415, 100)
+scale = Vector2(0.7, 0.7)
+
+[node name="Cam" type="Camera2D" parent="."]
+position = Vector2(639, 360)
+
+[node name="Info" type="Window" parent="."]
+title = "Song Data"
+position = Vector2i(930, 105)
+size = Vector2i(280, 475)
+
+[node name="Song" type="LineEdit" parent="Info"]
+offset_left = 25.0
+offset_top = 10.0
+offset_right = 205.0
+offset_bottom = 41.0
+placeholder_text = "Song Name"
+select_all_on_focus = true
+caret_blink = true
+
+[node name="BPM" type="SpinBox" parent="Info"]
+offset_left = 24.0
+offset_top = 50.0
+offset_right = 149.0
+offset_bottom = 85.0
+min_value = 1.0
+max_value = 500.0
+step = 0.0
+value = 100.0
+suffix = "BPM"
+
+[node name="Metronome" type="CheckBox" parent="Info"]
+offset_left = 20.0
+offset_top = 370.0
+offset_right = 190.0
+offset_bottom = 401.0
+text = "Metronome
+"
+
+[node name="HitsoundsP" type="CheckBox" parent="Info"]
+offset_left = 20.0
+offset_top = 400.0
+offset_right = 190.0
+offset_bottom = 431.0
+text = "Hitsounds (Player)"
+
+[node name="HitsoundsO" type="CheckBox" parent="Info"]
+offset_left = 20.0
+offset_top = 430.0
+offset_right = 219.0
+offset_bottom = 461.0
+text = "Hitsounds (Opponent)"
+
+[node name="Player1" type="OptionButton" parent="Info"]
+offset_left = 25.0
+offset_top = 190.0
+offset_right = 125.0
+offset_bottom = 210.0
+
+[node name="Player2" type="OptionButton" parent="Info"]
+offset_left = 25.0
+offset_top = 230.0
+offset_right = 125.0
+offset_bottom = 250.0
+
+[node name="GF" type="OptionButton" parent="Info"]
+offset_left = 25.0
+offset_top = 270.0
+offset_right = 125.0
+offset_bottom = 290.0

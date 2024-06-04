@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxy77bbkqx0q7"]
+
+[ext_resource type="Script" path="res://game/scenes/Pause_Screen.gd" id="1_uqd13"]
+[ext_resource type="FontFile" uid="uid://csunsdevou3rf" path="res://assets/fonts/vcr.ttf" id="2_cv0fx"]
+
+[node name="Pause_Screen" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_uqd13")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 1285.0
+offset_bottom = 727.0
+color = Color(0, 0, 0, 1)
+
+[node name="CurrentSong" type="Label" parent="."]
+offset_left = 1108.0
+offset_top = 13.0
+offset_right = 1279.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("2_cv0fx")
+theme_override_font_sizes/font_size = 32
+text = "Nothing!!"

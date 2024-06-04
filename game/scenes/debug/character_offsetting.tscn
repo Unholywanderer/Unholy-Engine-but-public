@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dom5tyfk1in3q"]
+
+[ext_resource type="Script" path="res://game/scenes/debug/CharacterOffsetting.gd" id="1_q8ujq"]
+
+[node name="CharacterOffsetting" type="Node2D"]
+script = ExtResource("1_q8ujq")
+
+[node name="TextLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(608, 352)
+zoom = Vector2(0.7, 0.7)
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(750, 50)
+size = Vector2i(400, 500)
+visible = true
+ok_button_text = "Open"
+dialog_close_on_escape = false
+file_mode = 0
+root_subfolder = "assets/images/characters"
+filters = PackedStringArray("*.res")
+show_hidden_files = true
+
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
